@@ -31,7 +31,7 @@ export default function Sort() {
   const [toggle, setToggle] = useState(false);
   return (
     <div className="relative">
-      <label className="text-md font-medium font-Poppins">
+      <label className=" text-sm font-medium font-Poppins">
         Sort
         <p
           onClick={() => setToggle((state) => !state)}

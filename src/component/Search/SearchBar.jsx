@@ -113,7 +113,7 @@ export default function SearchBar() {
       </div>
       <div
         onClick={() => setToggle((state) => !state)}
-        className="relative cursor-pointer mx-auto lg:hidden text-sm font-Monst flex items-center "
+        className="relative cursor-pointer mx-auto font-medium lg:hidden text-sm font-Monst flex items-center "
       >
         {active}
         <svg

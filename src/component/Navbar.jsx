@@ -30,8 +30,8 @@ export default function Navbar() {
           />
         </svg>
         {toggle ? <MenuBar setToggle={setToggle} link={link} /> : <></>}
-        <h1 className="font-bold text-xl hidden lg:block ">Behance</h1>
-        <h1 className="font-bold text-xl lg:hidden">Be</h1>
+        <h1 className="font-bold text-xl hidden lg:block ">Bēhance</h1>
+        <h1 className="font-bold text-xl lg:hidden">Bē</h1>
         <ul className="space-x-4 hidden lg:flex font-semibold">
           {link.map((item, index) => (
             <li
@@ -43,42 +43,44 @@ export default function Navbar() {
           ))}
         </ul>
       </div>
-      <div className="relative flex items-center font-medium space-x-4">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="black"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="w-6 h-6 "
-          onClick={() => handleNotification()}
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
-          />
-        </svg>
-        <div
-          className={`${
-            notifcation ? "flex" : "hidden"
-          } z-20 font-normal absolute  items-center justify-center top-10 right-[30%] w-[18rem] h-[10rem] border bg-white`}
-        >
-          You have no Notification
+      <div className="flex items-center font-medium space-x-4">
+        <div className="relative">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            fill="none"
+            fill="black"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-6 h-6 absolute -top-3 right-5 text-gray-300"
+            className="w-5 h-5 "
+            onClick={() => handleNotification()}
           >
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
-              d="M4.5 15.75l7.5-7.5 7.5 7.5"
+              d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
             />
           </svg>
+          <div
+            className={`${
+              notifcation ? "flex" : "hidden"
+            } z-20 font-normal absolute text-gray-400 items-center justify-center top-10 -right-6 w-[18rem] h-[10rem] border bg-white`}
+          >
+            You have no Notification
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="#fff"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-6 h-6 absolute -top-4 right-5 text-gray-300"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4.5 15.75l7.5-7.5 7.5 7.5"
+              />
+            </svg>
+          </div>
         </div>
 
         <svg
@@ -87,7 +89,7 @@ export default function Navbar() {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-6 h-6 "
+          className="w-5 h-5 "
         >
           <path
             strokeLinecap="round"
