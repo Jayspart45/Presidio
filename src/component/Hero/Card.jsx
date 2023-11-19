@@ -23,12 +23,12 @@ export default function Card({ src, desc, user, setModal, setSrc }) {
           className="w-full h-[300px] object-cover transition-transform duration-300 transform group-hover:scale-105"
         />
       </div>
-      <div className="absolute top-0 right-0 p-2 hidden group-hover:block">
+      <div className="absolute -top-2 right-0 p-2 hidden group-hover:block">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="currentColor"
-          className="w-6 h-6 text-yellow-500"
+          className="w-12 h-12 text-yellow-500"
         >
           <path
             fillRule="evenodd"
@@ -36,6 +36,9 @@ export default function Card({ src, desc, user, setModal, setSrc }) {
             clipRule="evenodd"
           />
         </svg>
+        <p className="absolute font-Poppins text-gray-100 font-bold top-5 right-[1.35rem]">
+          BE
+        </p>
       </div>
       <div className="text-sm font-Poppins bg-zinc-600 rounded-full text-gray-100 absolute top-2 left-2 p-1 hidden items-center  group-hover:flex">
         <svg

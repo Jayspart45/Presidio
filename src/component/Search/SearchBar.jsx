@@ -82,11 +82,14 @@ export default function SearchBar() {
         />
 
         {suggestions.length > 0 && (
-          <ul className="absolute z-10 top-full left-0 mt-1 w-3/4 bg-white border border-gray-300 rounded-md shadow-lg">
+          <ul className="absolute font-Monst z-10 top-full left-0 mt-1 w-3/4 bg-white border border-gray-300 rounded-md shadow-lg">
+            <h1 className="px-4 text-sm font-semibold text-gray-500">
+              Suggested Searches
+            </h1>
             {suggestions.map((suggestion, index) => (
               <li
                 key={index}
-                className="py-1 px-3 cursor-pointer"
+                className="py-1 text-md font-bold px-4 cursor-pointer"
                 onClick={() => handleSuggestionClick(suggestion)}
               >
                 {suggestion}

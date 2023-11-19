@@ -1,18 +1,22 @@
+import { useState } from "react";
 import adobeicon from "../assets/img1.jpg";
 import icon from "../assets/img2.png";
+import MenuBar from "./MenuBar";
 
 export default function Navbar() {
   const link = ["For You", "Discover", "Hire", "Assets", "Jobs"];
+  const [toggle, setToggle] = useState(false);
   return (
     <div className="px-2 md:px-6 py-2 lg:px-8 border  font-Poppins flex w-full justify-between">
-      <div className="flex items-center space-x-5">
+      <div className="flex relative items-center space-x-5">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-6 h-6  lg:hidden"
+          className="w-6 h-6  lg:hidden  cursor-pointer "
+          onClick={() => setToggle(true)}
         >
           <path
             strokeLinecap="round"
@@ -20,6 +24,7 @@ export default function Navbar() {
             d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
           />
         </svg>
+        {toggle ? <MenuBar setToggle={setToggle} link={link} /> : <></>}
 
         <h1 className="font-bold text-xl hidden lg:block ">Behance</h1>
         <h1 className="font-bold text-xl lg:hidden">Be</h1>
