@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Card from "./Card";
 import Modal from "../Hero/Modal";
+import axios from "axios";
 const Home = () => {
   const [data, setData] = useState([]);
   const [isModal, setModal] = useState(false);
@@ -8,10 +9,9 @@ const Home = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(
-        "https://api.unsplash.com/photos/?client_id=KlcDksCEoro8kUDKEk5XWf0LcLlVMn5Mko1ktUE2CdI"
-      );
-      const data = await response.json();
+      const response = await axios.get("http://localhost:3000/getPhoto");
+      console.log(response);
+      const data = response.data;
       setData(data);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -31,9 +31,9 @@ const Home = () => {
           setSrc={setSrc}
           setModal={setModal}
           key={index}
-          src={item.urls.raw}
-          desc={item.alt_description}
-          user={item.user.username}
+          src={item.src}
+          desc={item.title}
+          user={item.user}
         />
       ))}
     </div>
