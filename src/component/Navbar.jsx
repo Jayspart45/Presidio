@@ -6,6 +6,11 @@ import MenuBar from "./MenuBar";
 export default function Navbar() {
   const link = ["For You", "Discover", "Hire", "Assets", "Jobs"];
   const [toggle, setToggle] = useState(false);
+  const [notifcation, setNotification] = useState(false);
+
+  const handleNotification = () => {
+    setNotification((state) => !state);
+  };
   return (
     <div className="px-2 md:px-6 py-2 lg:px-8 border  font-Poppins flex w-full justify-between">
       <div className="flex relative items-center space-x-5">
@@ -15,7 +20,7 @@ export default function Navbar() {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-6 h-6  lg:hidden  cursor-pointer "
+          className="w-6 h-6  lg:hidden cursor-pointer "
           onClick={() => setToggle(true)}
         >
           <path
@@ -25,7 +30,6 @@ export default function Navbar() {
           />
         </svg>
         {toggle ? <MenuBar setToggle={setToggle} link={link} /> : <></>}
-
         <h1 className="font-bold text-xl hidden lg:block ">Behance</h1>
         <h1 className="font-bold text-xl lg:hidden">Be</h1>
         <ul className="space-x-4 hidden lg:flex font-semibold">
@@ -39,7 +43,7 @@ export default function Navbar() {
           ))}
         </ul>
       </div>
-      <div className="flex items-center font-medium space-x-4">
+      <div className="relative flex items-center font-medium space-x-4">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="black"
@@ -47,6 +51,7 @@ export default function Navbar() {
           strokeWidth={1.5}
           stroke="currentColor"
           className="w-6 h-6 "
+          onClick={() => handleNotification()}
         >
           <path
             strokeLinecap="round"
@@ -54,6 +59,28 @@ export default function Navbar() {
             d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
           />
         </svg>
+        <div
+          className={`${
+            notifcation ? "flex" : "hidden"
+          } z-20 font-normal absolute  items-center justify-center top-10 right-[30%] w-[18rem] h-[10rem] border bg-white`}
+        >
+          You have no Notification
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6 absolute -top-3 right-5 text-gray-300"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M4.5 15.75l7.5-7.5 7.5 7.5"
+            />
+          </svg>
+        </div>
+
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -74,7 +101,6 @@ export default function Navbar() {
         <button className="hidden lg:block bg-color3 text-gray-100 py-2 px-4 rounded-full">
           Sign Up
         </button>
-
         <span className="hidden lg:block mx-2 text-xl">|</span>
         <button className="hidden lg:flex items-center border py-2 px-4 rounded-full">
           <img src={adobeicon} alt="adobeicon" className="w-12 " />
